@@ -2,6 +2,25 @@ specVersion: 0.0.5
 schema:
   file: ./schema.graphql
 dataSources:
+  - kind: ethereum/contract
+    name: Placeholder
+    network: {{ network }}
+    source:
+      address: "{{ blockSniffer.address }}"
+      abi: Placeholder
+      startBlock: {{ blockSniffer.startBlock }}
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - Network
+      abis:
+        - name: Placeholder
+          file: ./abis/Placeholder.json
+      blockHandlers:
+        - handler: handleBlock
+      file: ./src/mappings/block.ts
   {{#optimizers}}
   - kind: ethereum
     name: {{ name }}

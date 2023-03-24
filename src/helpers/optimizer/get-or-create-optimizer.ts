@@ -20,6 +20,7 @@ export function getOrCreateOptimizer(optimizerAddress: Address): Optimizer {
     optimizer.name = contract.name();
     optimizer.token0 = token0.id;
     optimizer.token1 = token1.id;
+    optimizer.totalSupply = contract.totalSupply();
 
     optimizer.save();
 

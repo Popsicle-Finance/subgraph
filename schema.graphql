@@ -1,3 +1,11 @@
+type Network @entity {
+  " Network name "
+  id: ID!
+
+  " the head of the network "
+  currentBlock: BigInt!
+}
+
 type Protocol @entity {
   id: ID!
 
@@ -20,6 +28,25 @@ type Optimizer @entity {
   token0: Token!
 
   token1: Token!
+
+  totalSupply: BigInt!
+
+  snapshots: [OptimizerSnapshot!]! @derivedFrom(field: "optimizer")
+}
+
+type OptimizerSnapshot @entity(immutable: true){
+  " { Account address } - { Block number }"
+  id: ID!
+
+  optimizer: Optimizer!
+
+  totalSupply: BigInt!
+
+  " Block number of this event "
+  blockNumber: BigInt!
+
+  " Timestamp of this event "
+  timestamp: BigInt!
 }
 
 type Token @entity {
