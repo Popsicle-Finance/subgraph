@@ -85,9 +85,6 @@ type AccountStateSnapshot @entity {
 
   shares: BigInt!
 
-  " Transaction hash of the transaction that emitted this event "
-  hash: String
-
   " Block number of this event "
   blockNumber: BigInt!
 
