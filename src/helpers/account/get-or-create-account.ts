@@ -5,6 +5,7 @@ export function getOrCreateAccount(accountId: string): Account {
     let account = Account.load(accountId);
     if (!account) {
         account = new Account(accountId);
+        account.stateIds = [];
         account.save();
 
         const protocol = getOrCreateProtocol();
