@@ -29,7 +29,7 @@ You can see the configurations for each network here `./deployments/*.json`;
 ```
 PopsicleV3Optimizer
 └── events
-    └── Deposit(indexed address,uint256,uint256,uint256)
+    └── Deposit(indexed address,indexed address,uint256,uint256,uint256)
     └── CollectFees(uint256,uint256,uint256,uint256)
 ```
 

@@ -1,0 +1,96 @@
+type Protocol @entity {
+  id: ID!
+
+  " All cauldrons that belong to this protocol "
+  optimizers: [Optimizer!]! @derivedFrom(field: "protocol")
+
+  optimizerIds: [String!]!
+
+  accountIds: [String!]!
+}
+
+type Optimizer @entity {
+  id: ID!
+
+  " The protocol this cauldron belongs to "
+  protocol: Protocol!
+
+  name: String!
+
+  token0: Token!
+
+  token1: Token!
+}
+
+type Token @entity {
+  " Smart contract address of the token "
+  id: ID!
+
+  " Name of the token, mirrored from the smart contract "
+  name: String!
+
+  " Symbol of the token, mirrored from the smart contract "
+  symbol: String!
+
+  " The number of decimal places this token uses, default to 18 "
+  decimals: Int!
+
+  " Optional field to track the price of a token, mostly for caching purposes "
+  lastPriceUsd: BigDecimal!
+
+  " Optional field to track the block number of the last token price "
+  lastPriceBlockNumber: BigInt!
+
+  " Optional field to track the timestamp of the last token price "
+  lastPriceTimestamp: BigInt!
+}
+
+type Account @entity {
+  " { Account address } "
+  id: ID!
+
+  " All positions that belong to this account "
+  states: [AccountState!]! @derivedFrom(field: "account")
+
+  stateIds: [String!]!
+}
+
+type AccountState @entity {
+  "{ Optimizer address }-{ Account address }"
+  id: ID!
+
+  " Account that owns this position "
+  account: Account!
+
+  " The market in which this position was opened "
+  optimizer: Optimizer!
+
+  shares: BigInt!
+
+  " Position daily snapshots for open positions "
+  snapshots: [AccountStateSnapshot!]! @derivedFrom(field: "state")
+}
+
+type AccountStateSnapshot @entity {
+  " { Account address }-{ Cauldron address }-{ Block number }"
+  id: ID!
+
+  " Account that owns this position "
+  account: Account!
+
+  " The market in which this position was opened "
+  optimizer: Optimizer!
+
+  state: AccountState!
+
+  shares: BigInt!
+
+  " Transaction hash of the transaction that emitted this event "
+  hash: String
+
+  " Block number of this event "
+  blockNumber: BigInt!
+
+  " Timestamp of this event "
+  timestamp: BigInt!
+}

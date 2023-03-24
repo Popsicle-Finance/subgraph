@@ -1,5 +1,11 @@
 import { BigInt, BigDecimal } from '@graphprotocol/graph-ts';
 
+export namespace EventType {
+    export const UPDATE = 'UPDATE';
+    export const DEPOSIT = 'DEPOSIT';
+    export const WITHDRAW = 'WITHDRAW';
+}
+
 // Token
 export const INVALID_TOKEN_DECIMALS = 0;
 export const UNKNOWN_TOKEN_VALUE = 'unknown';
