@@ -3,14 +3,7 @@ import { Optimizer } from '../../../generated/schema';
 import { getOrCreateAccount, getOrCreateAccountState, getOrCreateAccountStateSnapshot } from '../account';
 import { EventType } from '../../constants';
 
-export function updateAccountState(
-    optimizer: Optimizer,
-    accountAddress: Address,
-    eventType: string,
-    amount: BigInt,
-    block: ethereum.Block,
-    transaction?: ethereum.Transaction,
-): void {
+export function updateAccountState(optimizer: Optimizer, accountAddress: Address, eventType: string, amount: BigInt, block: ethereum.Block): void {
     const account = getOrCreateAccount(accountAddress.toHexString());
     const accountState = getOrCreateAccountState(optimizer, account);
 
@@ -28,7 +21,7 @@ export function updateAccountState(
 
     accountState.save();
 
-    const accountStateSnapshot = getOrCreateAccountStateSnapshot(optimizer, account, accountState, block, transaction);
+    const accountStateSnapshot = getOrCreateAccountStateSnapshot(optimizer, account, accountState, block);
     accountStateSnapshot.shares = accountState.shares;
     accountStateSnapshot.save();
 }
