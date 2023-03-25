@@ -8,6 +8,7 @@ export function createOptimizerSnapshot(optimizer: Optimizer, block: ethereum.Bl
     if (totalSupplyCall.reverted) return;
 
     const snapshot = new OptimizerSnapshot(`${optimizer.id}-${block.number.toHexString()}`);
+    snapshot.optimizer = optimizer.id;
     snapshot.totalSupply = totalSupplyCall.value;
     snapshot.blockNumber = block.number;
     snapshot.timestamp = block.timestamp;

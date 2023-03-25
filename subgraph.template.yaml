@@ -18,6 +18,14 @@ dataSources:
       abis:
         - name: Placeholder
           file: ./abis/Placeholder.json
+        - name: PopsicleV3Optimizer
+          file: ./abis/PopsicleV3Optimizer.json
+        - name: ERC20
+          file: ./abis/ERC20.json
+        - name: ERC20SymbolBytes
+          file: ./abis/ERC20SymbolBytes.json
+        - name: ERC20NameBytes
+          file: ./abis/ERC20NameBytes.json
       blockHandlers:
         - handler: handleBlock
       file: ./src/mappings/block.ts
