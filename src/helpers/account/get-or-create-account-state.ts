@@ -9,7 +9,6 @@ export function getOrCreateAccountState(optimizer: Optimizer, account: Account):
         state.account = account.id;
         state.optimizer = optimizer.id;
         state.shares = BIGINT_ZERO;
-        state.liquidity = BIGINT_ZERO;
         state.save();
 
         const stateIds = account.stateIds;

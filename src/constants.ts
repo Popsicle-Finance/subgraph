@@ -1,7 +1,6 @@
 import { BigInt, BigDecimal } from '@graphprotocol/graph-ts';
 
 export namespace EventType {
-    export const UPDATE = 'UPDATE';
     export const DEPOSIT = 'DEPOSIT';
     export const WITHDRAW = 'WITHDRAW';
 }

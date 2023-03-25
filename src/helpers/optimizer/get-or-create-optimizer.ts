@@ -1,4 +1,4 @@
-import { Address, BigInt } from '@graphprotocol/graph-ts';
+import { Address } from '@graphprotocol/graph-ts';
 import { Optimizer } from '../../../generated/schema';
 import { PopsicleV3Optimizer } from '../../../generated/templates/UniswapV3Pool/PopsicleV3Optimizer';
 import { getOrCreateProtocol } from '../protocol';
@@ -20,11 +20,7 @@ export function getOrCreateOptimizer(optimizerAddress: Address): Optimizer {
     optimizer.name = contract.name();
     optimizer.token0 = token0.id;
     optimizer.token1 = token1.id;
-    optimizer.totalSupply = contract.totalSupply();
-    optimizer.liquidity = contract.position().getLiquidity();
     optimizer.pool = contract.pool().toHexString();
-    optimizer.tickLower = BigInt.fromI32(contract.tickLower());
-    optimizer.tickUpper = BigInt.fromI32(contract.tickUpper());
     optimizer.save();
 
     const optimizerIds = protocol.optimizerIds;

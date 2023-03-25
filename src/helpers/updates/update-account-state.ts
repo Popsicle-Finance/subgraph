@@ -17,19 +17,9 @@ export function updateAccountState(optimizer: Optimizer, accountAddress: Address
         accountState.shares = accountState.shares.minus(amount);
     }
 
-    if (eventType == EventType.UPDATE) {
-        accountState.shares = amount;
-    }
-
     accountState.save();
 
     const accountStateSnapshot = getOrCreateAccountStateSnapshot(optimizer, account, accountState, block);
     accountStateSnapshot.shares = accountState.shares;
-
-    const liquidity = optimizer.liquidity.times(accountState.shares).div(optimizer.totalSupply);
-    accountStateSnapshot.liquidity = liquidity;
-    accountState.liquidity = liquidity;
-    accountState.save();
-
     accountStateSnapshot.save();
 }

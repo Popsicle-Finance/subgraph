@@ -11,7 +11,6 @@ export function getOrCreateAccountStateSnapshot(optimizer: Optimizer, account: A
         snapshot.optimizer = optimizer.id;
         snapshot.state = state.id;
         snapshot.shares = BIGINT_ZERO;
-        snapshot.liquidity = BIGINT_ZERO;
         snapshot.blockNumber = block.number;
         snapshot.timestamp = block.timestamp;
         snapshot.save();

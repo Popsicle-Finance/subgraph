@@ -31,6 +31,7 @@ PopsicleV3Optimizer
 └── events
     └── Deposit(indexed address,indexed address,uint256,uint256,uint256)
     └── CollectFees(uint256,uint256,uint256,uint256)
+    └── Withdraw(indexed address,indexed address,uint256,uint256,uint256)
 ```
 
 ## Deployment
