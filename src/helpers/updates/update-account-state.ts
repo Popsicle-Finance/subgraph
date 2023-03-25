@@ -2,7 +2,7 @@ import { Address, BigInt, ethereum } from '@graphprotocol/graph-ts';
 import { Optimizer } from '../../../generated/schema';
 import { getOrCreateAccount, getOrCreateAccountState, getOrCreateAccountStateSnapshot } from '../account';
 import { EventType } from '../../constants';
-import { UniswapV3Pool } from "../../../generated/templates/UniswapV3Pool/UniswapV3Pool";
+import { UniswapV3Pool } from '../../../generated/templates/UniswapV3Pool/UniswapV3Pool';
 
 export function updateAccountState(optimizer: Optimizer, accountAddress: Address, eventType: string, amount: BigInt, block: ethereum.Block): void {
     const account = getOrCreateAccount(accountAddress.toHexString());
