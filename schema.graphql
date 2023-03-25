@@ -22,8 +22,6 @@ type Optimizer @entity {
   token1: Token!
 
   pool: String!
-
-  snapshots: [OptimizerSnapshot!]! @derivedFrom(field: "optimizer")
 }
 
 type Token @entity {
@@ -71,6 +69,10 @@ type AccountState @entity {
 
   shares: BigInt!
 
+  feesEarned0: BigDecimal!
+
+  feesEarned1: BigDecimal!
+
   " Position daily snapshots for open positions "
   snapshots: [AccountStateSnapshot!]! @derivedFrom(field: "state")
 }
@@ -88,6 +90,10 @@ type AccountStateSnapshot @entity {
   state: AccountState!
 
   shares: BigInt!
+
+  feesEarned0: BigDecimal!
+
+  feesEarned1: BigDecimal!
 
   " Block number of this event "
   blockNumber: BigInt!

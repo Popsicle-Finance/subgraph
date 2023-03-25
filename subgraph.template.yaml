@@ -16,7 +16,6 @@ dataSources:
       language: wasm/assemblyscript
       entities:
         - Deposit
-        - CollectFees
       abis:
         - name: PopsicleV3Optimizer
           file: ./abis/PopsicleV3Optimizer.json
@@ -29,10 +28,10 @@ dataSources:
         - name: ERC20NameBytes
           file: ./abis/ERC20NameBytes.json
       eventHandlers:
-        - event: Deposit(indexed address,indexed address,uint256,uint256,uint256)
-          handler: handleLogDeposit
         - event: CollectFees(uint256,uint256,uint256,uint256)
           handler: handleLogCollectFees
+        - event: Deposit(indexed address,indexed address,uint256,uint256,uint256)
+          handler: handleLogDeposit
         - event: Withdraw(indexed address,indexed address,uint256,uint256,uint256)
           handler: handleLogWithdraw
       file: ./src/mappings/optimizer.ts

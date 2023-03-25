@@ -19,3 +19,4 @@ export const BIGDECIMAL_ZERO = new BigDecimal(BIGINT_ZERO);
 export const BIGDECIMAL_ONE = new BigDecimal(BIGINT_ONE);
 
 export const PROTOCOL_FEE = BigInt.fromI32(200000);
+export const GLOBAL_DIVISIONER = BigInt.fromI32(1000000);

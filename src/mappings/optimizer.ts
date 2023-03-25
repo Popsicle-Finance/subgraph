@@ -1,7 +1,9 @@
 import { Deposit, CollectFees, Withdraw } from '../../generated/templates/UniswapV3Pool/PopsicleV3Optimizer';
-import { EventType } from '../constants';
+import { EventType, GLOBAL_DIVISIONER, PROTOCOL_FEE } from '../constants';
 import { getOrCreateOptimizer } from '../helpers/optimizer';
-import { updateAccountState, updateStates } from '../helpers/updates';
+import { updateAccountState, updateFees } from '../helpers/updates';
+import { BigDecimal } from '@graphprotocol/graph-ts';
+import { bigIntToBigDecimal } from '../utils';
 
 export function handleLogDeposit(event: Deposit): void {
     const optimizerAddress = event.address;
@@ -18,5 +20,12 @@ export function handleLogWithdraw(event: Withdraw): void {
 }
 
 export function handleLogCollectFees(event: CollectFees): void {
-    updateStates(event.block);
+    const optimizerAddress = event.address;
+    const optimizer = getOrCreateOptimizer(optimizerAddress);
+    if (!optimizer) return;
+
+    const feesFromPool0 = event.params.feesFromPool0.times(PROTOCOL_FEE).div(GLOBAL_DIVISIONER);
+    const feesFromPool1 = event.params.feesFromPool1.times(PROTOCOL_FEE).div(GLOBAL_DIVISIONER);
+
+    updateFees(optimizer, [feesFromPool0, feesFromPool1], event.block);
 }
