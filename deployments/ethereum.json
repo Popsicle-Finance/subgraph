@@ -1,5 +1,4 @@
 {
     "network": "mainnet",
-    "optimizers": [],
-    "blockNumber": 1
+    "optimizers": []
 }

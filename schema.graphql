@@ -1,11 +1,3 @@
-type Network @entity {
-  " Network name "
-  id: ID!
-
-  " the head of the network "
-  currentBlock: BigInt!
-}
-
 type Protocol @entity {
   id: ID!
 
@@ -31,6 +23,14 @@ type Optimizer @entity {
 
   totalSupply: BigInt!
 
+  liquidity: BigInt!
+
+  pool: String!
+
+  tickLower: BigInt!
+
+  tickUpper: BigInt!
+
   snapshots: [OptimizerSnapshot!]! @derivedFrom(field: "optimizer")
 }
 
@@ -41,6 +41,12 @@ type OptimizerSnapshot @entity(immutable: true){
   optimizer: Optimizer!
 
   totalSupply: BigInt!
+
+  liquidity: BigInt!
+
+  tickLower: BigInt!
+
+  tickUpper: BigInt!
 
   " Block number of this event "
   blockNumber: BigInt!
@@ -94,6 +100,8 @@ type AccountState @entity {
 
   shares: BigInt!
 
+  liquidity: BigInt!
+
   " Position daily snapshots for open positions "
   snapshots: [AccountStateSnapshot!]! @derivedFrom(field: "state")
 }
@@ -111,6 +119,8 @@ type AccountStateSnapshot @entity {
   state: AccountState!
 
   shares: BigInt!
+
+  liquidity: BigInt!
 
   " Block number of this event "
   blockNumber: BigInt!

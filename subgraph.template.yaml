@@ -2,33 +2,6 @@ specVersion: 0.0.5
 schema:
   file: ./schema.graphql
 dataSources:
-  - kind: ethereum/contract
-    name: Placeholder
-    network: {{ network }}
-    source:
-      address: "{{ blockSniffer.address }}"
-      abi: Placeholder
-      startBlock: {{ blockSniffer.startBlock }}
-    mapping:
-      kind: ethereum/events
-      apiVersion: 0.0.7
-      language: wasm/assemblyscript
-      entities:
-        - Network
-      abis:
-        - name: Placeholder
-          file: ./abis/Placeholder.json
-        - name: PopsicleV3Optimizer
-          file: ./abis/PopsicleV3Optimizer.json
-        - name: ERC20
-          file: ./abis/ERC20.json
-        - name: ERC20SymbolBytes
-          file: ./abis/ERC20SymbolBytes.json
-        - name: ERC20NameBytes
-          file: ./abis/ERC20NameBytes.json
-      blockHandlers:
-        - handler: handleBlock
-      file: ./src/mappings/block.ts
   {{#optimizers}}
   - kind: ethereum
     name: {{ name }}
@@ -47,6 +20,8 @@ dataSources:
       abis:
         - name: PopsicleV3Optimizer
           file: ./abis/PopsicleV3Optimizer.json
+        - name: UniswapV3Pool
+          file: ./abis/UniswapV3Pool.json
         - name: ERC20
           file: ./abis/ERC20.json
         - name: ERC20SymbolBytes

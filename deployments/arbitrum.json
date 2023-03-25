@@ -6,9 +6,5 @@
             "address": "0xB51603E800102295e4EFB5159cFA60C49Af457dF",
             "startBlock": 72860021
         }
-    ],
-    "blockSniffer": {
-        "address": "0x00000000000000000000000000000000000A4B05",
-        "startBlock": 72860020
-    }
+    ]
 }

@@ -1,7 +1,7 @@
 import { Deposit, CollectFees, Withdraw } from '../../generated/templates/UniswapV3Pool/PopsicleV3Optimizer';
 import { EventType } from '../constants';
 import { getOrCreateOptimizer } from '../helpers/optimizer';
-import { updateAccountState } from '../helpers/updates';
+import { updateAccountState, updateOptimizers, updateStates } from '../helpers/updates';
 
 export function handleLogDeposit(event: Deposit): void {
     const optimizerAddress = event.address;
@@ -17,4 +17,7 @@ export function handleLogWithdraw(event: Withdraw): void {
     updateAccountState(optimizer, event.params.sender, EventType.DEPOSIT, event.params.shares, event.block);
 }
 
-export function handleLogCollectFees(event: CollectFees): void {}
+export function handleLogCollectFees(event: CollectFees): void {
+    updateOptimizers(event.block);
+    updateStates(event.block);
+}

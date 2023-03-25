@@ -18,3 +18,5 @@ export const BIGINT_ONE = BigInt.fromI32(1);
 
 export const BIGDECIMAL_ZERO = new BigDecimal(BIGINT_ZERO);
 export const BIGDECIMAL_ONE = new BigDecimal(BIGINT_ONE);
+
+export const PROTOCOL_FEE = BigInt.fromI32(200000);
