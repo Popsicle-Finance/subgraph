@@ -24,8 +24,8 @@ export function handleLogCollectFees(event: CollectFees): void {
     const optimizer = getOrCreateOptimizer(optimizerAddress);
     if (!optimizer) return;
 
-    const feesFromPool0 = event.params.feesFromPool0.times(PROTOCOL_FEE).div(GLOBAL_DIVISIONER);
-    const feesFromPool1 = event.params.feesFromPool1.times(PROTOCOL_FEE).div(GLOBAL_DIVISIONER);
+    const feesFromPool0 = event.params.feesFromPool0.minus(event.params.feesFromPool0.times(PROTOCOL_FEE).div(GLOBAL_DIVISIONER));
+    const feesFromPool1 = event.params.feesFromPool1.minus(event.params.feesFromPool1.times(PROTOCOL_FEE).div(GLOBAL_DIVISIONER));
 
     updateFees(optimizer, [feesFromPool0, feesFromPool1], event.block);
 }
