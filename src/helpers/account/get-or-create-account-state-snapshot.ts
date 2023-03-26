@@ -1,6 +1,6 @@
 import { ethereum } from '@graphprotocol/graph-ts';
 import { Account, AccountStateSnapshot, Optimizer, AccountState } from '../../../generated/schema';
-import { BIGDECIMAL_ZERO, BIGINT_ZERO } from '../../constants';
+import { AccountSnapshotType, BIGDECIMAL_ZERO } from '../../constants';
 
 export function getOrCreateAccountStateSnapshot(optimizer: Optimizer, account: Account, state: AccountState, block: ethereum.Block): AccountStateSnapshot {
     const id = `${optimizer.id}-${account.id}-${block.number.toHexString()}`;
@@ -13,6 +13,7 @@ export function getOrCreateAccountStateSnapshot(optimizer: Optimizer, account: A
         snapshot.shares = state.shares;
         snapshot.feesEarned0 = BIGDECIMAL_ZERO;
         snapshot.feesEarned1 = BIGDECIMAL_ZERO;
+        snapshot.type = AccountSnapshotType.COLLECT;
         snapshot.blockNumber = block.number;
         snapshot.timestamp = block.timestamp;
         snapshot.save();

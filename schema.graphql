@@ -77,6 +77,12 @@ type AccountState @entity {
   snapshots: [AccountStateSnapshot!]! @derivedFrom(field: "state")
 }
 
+enum AccountSnapshotType {
+  COLLECT
+  WITHDRAW
+  # Will add more
+}
+
 type AccountStateSnapshot @entity {
   " { Account address }-{ Cauldron address }-{ Block number }"
   id: ID!
@@ -90,6 +96,8 @@ type AccountStateSnapshot @entity {
   state: AccountState!
 
   shares: BigInt!
+
+  type: AccountSnapshotType!
 
   feesEarned0: BigDecimal!
 

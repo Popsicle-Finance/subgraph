@@ -5,6 +5,11 @@ export namespace EventType {
     export const WITHDRAW = 'WITHDRAW';
 }
 
+export namespace AccountSnapshotType {
+    export const COLLECT = 'COLLECT';
+    export const WITHDRAW = 'WITHDRAW';
+}
+
 // Token
 export const INVALID_TOKEN_DECIMALS = 0;
 export const UNKNOWN_TOKEN_VALUE = 'unknown';
