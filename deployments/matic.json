@@ -1,0 +1,40 @@
+{
+    "network": "matic",
+    "optimizers": [
+        {
+            "name": "USDCWETH5",
+            "address": "0xa7053782dC3523D2C82B439Acf3f9344Fb47b97f",
+            "startBlock": 23027830
+        },
+        {
+            "name": "USDCWETH3",
+            "address": "0xd2C5A739ebfE3E00CFa88A51749d367d7c496CCf",
+            "startBlock": 23027913
+        },
+        {
+            "name": "MATICWETH3",
+            "address": "0x949FDF28F437258E7564a35596b1A99b24F81e4e",
+            "startBlock": 23027982
+        },
+        {
+            "name": "MATICWETH5",
+            "address": "0xa0273C10b8A4BF0bDC57cb0bC974E3A9d89527b8",
+            "startBlock": 23028034
+        },
+        {
+            "name": "MATICUSDC",
+            "address": "0x5C08A6762CAF9ec8a42F249eBC23aAE66097218D",
+            "startBlock": 23028110
+        },
+        {
+            "name": "MATICUSDT",
+            "address": "0xaE7b92C8B14E7bdB523408aE0A6fFbf3f589adD9",
+            "startBlock": 23028177
+        },
+        {
+            "name": "USDCUSDT",
+            "address": "0x9683D433621A83aA7dd290106e1da85251317F55",
+            "startBlock": 23028245
+        }
+    ]
+}

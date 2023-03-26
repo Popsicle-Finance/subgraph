@@ -1,4 +1,130 @@
 {
     "network": "mainnet",
-    "optimizers": []
+    "optimizers": [
+        {
+            "name": "AXSWETH",
+            "address": "0xa7053782dC3523D2C82B439Acf3f9344Fb47b97f",
+            "startBlock": 13552065
+        },
+        {
+            "name": "DYDXWETH",
+            "address": "0xd2C5A739ebfE3E00CFa88A51749d367d7c496CCf",
+            "startBlock": 13552083
+        },
+        {
+            "name": "FTMWETH",
+            "address": "0x949FDF28F437258E7564a35596b1A99b24F81e4e",
+            "startBlock": 13552098
+        },
+        {
+            "name": "SHIBWETH3",
+            "address": "0xa0273C10b8A4BF0bDC57cb0bC974E3A9d89527b8",
+            "startBlock": 13552122
+        },
+        {
+            "name": "SPELLWETH",
+            "address": "0x5C08A6762CAF9ec8a42F249eBC23aAE66097218D",
+            "startBlock": 13552132
+        },
+        {
+            "name": "USDCWETH3",
+            "address": "0xaE7b92C8B14E7bdB523408aE0A6fFbf3f589adD9",
+            "startBlock": 13552143
+        },
+        {
+            "name": "USDCWETH5",
+            "address": "0x9683D433621A83aA7dd290106e1da85251317F55",
+            "startBlock": 13552154
+        },
+        {
+            "name": "WBTCWETH3",
+            "address": "0x212Aa024E25A9C9bAF5b5397B558B7ccea81740B",
+            "startBlock": 13552176
+        },
+        {
+            "name": "WBTCWETH5",
+            "address": "0xBE5d1d15617879B22C7b6a8e1e16aDD6d0bE3c61",
+            "startBlock": 13552186
+        },
+        {
+            "name": "WETHICE",
+            "address": "0xFF338D347E59d6B61E5C69382915D863bb22Ef2f",
+            "startBlock": 13550675
+        },
+        {
+            "name": "WETHUSDT3",
+            "address": "0xa1BE64Bb138f2B6BCC2fBeCb14c3901b63943d0E",
+            "startBlock": 13549847
+        },
+        {
+            "name": "WETHUSDT5",
+            "address": "0x8d8B490fCe6Ca1A31752E7cFAFa954Bf30eB7EE2",
+            "startBlock": 13552204
+        },
+        {
+            "name": "SHIBWETH1",
+            "address": "0x495410B129A27bC771ce8fb316d804a5686B8Ea7",
+            "startBlock": 13557215
+        },
+        {
+            "name": "ELONWETH",
+            "address": "0xCeBAB89EaBE767f637E36EA6a54e46F0c16862B3",
+            "startBlock": 13576372
+        },
+        {
+            "name": "WETHENS",
+            "address": "0x36e9B6e7FADC7b8Ee289c8A24Ad96573cda3D7D9",
+            "startBlock": 13714433
+        },
+        {
+            "name": "SANDWETH",
+            "address": "0xF4f542E4b5E2345A1f2D0fEab9492357Ebc5c8f4",
+            "startBlock": 13714444
+        },
+        {
+            "name": "WBTCUSDT",
+            "address": "0xd2EF15af2649CC46e3E23B96563a3d44ef5E5A06",
+            "startBlock": 13714450
+        },
+        {
+            "name": "WETHLUNC",
+            "address": "0x6033A9A7002fD7854120132aF3478DbBb18eB5a3",
+            "startBlock": 16598227
+        },
+        {
+            "name": "WBTCXTP",
+            "address": "0xb7be788116cAb88a40db198c295c2b9390Aee566",
+            "startBlock": 16598392
+        },
+        {
+            "name": "USDCSNX",
+            "address": "0x3CD02fE9e114611C82f0eb147c74D7B463997D1e",
+            "startBlock": 16599183
+        },
+        {
+            "name": "LCXWETH",
+            "address": "0x0807b255c2d489DBe8cE45D048773d06b1fBF87a",
+            "startBlock": 16642073
+        },
+        {
+            "name": "WETHRPL",
+            "address": "0x4A60849D663104bF6d5046B2d5f7353f1FAb8eDC",
+            "startBlock": 16642714
+        },
+        {
+            "name": "GALAWETH",
+            "address": "0x4703e6C963E72F6132385E523B4a8Aa0236d5c9D",
+            "startBlock": 16642763
+        },
+        {
+            "name": "LINKWETH",
+            "address": "0xdb4f340ed1c491c54feBf8F079ECE974772FAE91",
+            "startBlock": 16643179
+        },
+        {
+            "name": "FXSWETH",
+            "address": "0xa6B993Bd90fD68e90E0F87BA58B4F783dFbFfb69",
+            "startBlock": 16643434
+        }
+    ]
 }

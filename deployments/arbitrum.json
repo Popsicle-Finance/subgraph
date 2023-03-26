@@ -5,6 +5,41 @@
             "name": "WETHARB",
             "address": "0xB51603E800102295e4EFB5159cFA60C49Af457dF",
             "startBlock": 72860021
+        },
+        {
+            "name": "WETHGMX",
+            "address": "0x7F65417dd8997596a46224285f6689A4ee7Ed06e",
+            "startBlock": 72187943
+        },
+        {
+            "name": "VELAWETH",
+            "address": "0x87324250330634b5bBdac11c123Ca371246d5478",
+            "startBlock": 72198604
+        },
+        {
+            "name": "GNSWETH",
+            "address": "0xaeA103feED85dDAE00f4CdE0ce364fE6233579f8",
+            "startBlock": 72199025
+        },
+        {
+            "name": "RDNTWETH",
+            "address": "0x77b97777D2c4494B2c21F130cA4c091500847aF7",
+            "startBlock": 72199379
+        },
+        {
+            "name": "WETHLINK",
+            "address": "0xEf8518A4e164BEEcc59D6b8b880F3536AA65d187",
+            "startBlock": 72198140
+        },
+        {
+            "name": "WBTCWETH",
+            "address": "0x9BBA438CF450374453Bd4DE3b1A6d56835Af5e85",
+            "startBlock": 72200095
+        },
+        {
+            "name": "GRAILWETH",
+            "address": "0x051612bbDebfc200A20F6B11B3d4D02A2f28f9c5",
+            "startBlock": 72200843
         }
     ]
 }
