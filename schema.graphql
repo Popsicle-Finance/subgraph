@@ -22,6 +22,8 @@ type Optimizer @entity {
   token1: Token!
 
   pool: String!
+
+  lastCollectBlock: BigInt!
 }
 
 type Token @entity {

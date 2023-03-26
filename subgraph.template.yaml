@@ -27,6 +27,8 @@ dataSources:
           file: ./abis/ERC20SymbolBytes.json
         - name: ERC20NameBytes
           file: ./abis/ERC20NameBytes.json
+        - name: PopsicleAnalytics
+          file: ./abis/PopsicleAnalytics.json
       eventHandlers:
         - event: CollectFees(uint256,uint256,uint256,uint256)
           handler: handleLogCollectFees
@@ -59,4 +61,6 @@ templates:
           file: ./abis/ERC20SymbolBytes.json
         - name: ERC20NameBytes
           file: ./abis/ERC20NameBytes.json
+        - name: PopsicleAnalytics
+          file: ./abis/PopsicleAnalytics.json
       file: ./src/mappings/pool.ts
